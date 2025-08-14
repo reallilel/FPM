@@ -1,0 +1,4 @@
+elasticsearch
+Flask
+requests
+scapy

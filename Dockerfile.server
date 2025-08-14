@@ -1,0 +1,23 @@
+# Dockerfile.server
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# نسخ ملفات التطبيق والمتطلبات
+COPY server.py .
+COPY requirements.txt .
+
+# تثبيت المتطلبات
+# نستخدم --no-cache-dir لضمان إعادة تنزيل وتثبيت نظيف للحزم
+RUN pip install --no-cache-dir -r requirements.txt
+
+# نسخ الشهادات إلى المسار الصحيح
+# المسارات هنا نسبية لـ WORKDIR /app
+COPY certs /app/certs
+
+# فتح البورت الذي يستمع عليه التطبيق
+EXPOSE 8443
+
+# أمر تشغيل التطبيق عند بدء الحاوية
+# هذا سيجعل server.py يعمل في المقدمة ويطبع السجلات مباشرة
+CMD ["python", "server.py"]

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fpm-dashboard
+spec:
+  selector:
+    app: fpm-dashboard
+  ports:
+    - protocol: TCP
+      port: 8443        # منفذ الخدمة الذي يستخدم TLS
+      targetPort: 6000  # Flask يعمل على 6000 داخل الحاوية
+      nodePort: 30600   # منفذ الوصول من خارج Minikube
+  type: NodePort

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fpm-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fpm-dashboard
+  template:
+    metadata:
+      labels:
+        app: fpm-dashboard
+    spec:
+      containers:
+      - name: dashboard
+        image: reallilel/fpm-dashboard:latest # تأكد أن هذا هو اسم الصورة الصحيح
+        imagePullPolicy: Always # تأكد من وجود هذا السطر
+        ports:
+        - containerPort: 6000 # هذا هو المنفذ الذي يستمع عليه تطبيق Flask داخل الحاوية (HTTP)
+          protocol: TCP
+      # تم إزالة أقسام volumeMounts و volumes المتعلقة بالشهادات مؤقتًا
+      imagePullSecrets: # إذا كانت صورك خاصة على Docker Hub
+      - name: regcred   # اسم الـ Secret الذي أنشأته
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fpm-dashboard
+spec:
+  selector:
+    app: fpm-dashboard
+  ports:
+    - protocol: TCP
+      port: 6000      # منفذ الخدمة داخل الكلاستر (منفذ HTTP)
+      targetPort: 6000 # المنفذ الذي تستمع عليه الحاوية (يجب أن يتطابق مع EXPOSE في Dockerfile)
+      nodePort: 30600 # منفذ NodePort (يمكنك اختيار أي رقم بين 30000-32767)
+  type: NodePort

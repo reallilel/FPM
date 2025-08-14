@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2025-07-21T11:14:24.146355Z",
+    "src_ip": "192.168.1.100",
+    "dst_ip": "10.0.0.1",
+    "dst_port": 80,
+    "protocol": "HTTP",
+    "action": "allow",
+    "byte_count": 1500,
+    "flow_id": "dummy-flow-1753085664.146377",
+    "alerts": [
+      "Generated Test Data"
+    ]
+  },
+  {
+    "timestamp": "2025-07-21T11:15:36.691179Z",
+    "src_ip": "192.168.1.100",
+    "dst_ip": "10.0.0.1",
+    "dst_port": 80,
+    "protocol": "HTTP",
+    "action": "allow",
+    "byte_count": 1500,
+    "flow_id": "dummy-flow-1753085736.691212",
+    "alerts": [
+      "Generated Test Data"
+    ]
+  }
+]

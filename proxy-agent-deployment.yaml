@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fpm-agent
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fpm-agent
+  template:
+    metadata:
+      labels:
+        app: fpm-agent
+    spec:
+      containers:
+      - name: agent
+        image: reallilel/fpm-agent:latest
+        env:
+        - name: SERVER_HOST
+          value: fpm-server
+        - name: SERVER_PORT
+          value: "8443"

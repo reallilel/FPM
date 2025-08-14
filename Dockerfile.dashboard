@@ -1,0 +1,21 @@
+# Dockerfile.dashboard
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# نسخ ملفات التطبيق والمتطلبات
+COPY dashboard.py .
+COPY requirements.txt .
+
+# نسخ مجلد الشهادات إلى المسار الصحيح
+COPY certs/ /app/certs/
+ # <--- تم التعديل: إضافة "./" للمسار النسبي
+
+# تثبيت تبعيات بايثون من requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# الإعلان عن المنفذ الذي يستمع عليه تطبيق Flask
+EXPOSE 6000
+
+# أمر تشغيل تطبيق Flask عند بدء الحاوية
+CMD ["python", "dashboard.py"]

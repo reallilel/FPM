@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fpm-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fpm-server
+  template:
+    metadata:
+      labels:
+        app: fpm-server
+    spec:
+      containers:
+      - name: server
+        image: reallilel/fpm-server:latest
+        imagePullPolicy: Always # <--- إضافة هذا السطر
+        ports:
+        - containerPort: 8443 # المنفذ الذي يستمع عليه تطبيق Python داخل الحاوية
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fpm-server # اسم الخدمة
+spec:
+  selector:
+    app: fpm-server # يجب أن يتطابق مع تسمية الـ Pod
+  ports:
+    - protocol: TCP
+      port: 8443      # منفذ الخدمة داخل الكلاستر
+      targetPort: 8443 # المنفذ الذي تستمع عليه الحاوية
+      nodePort: 30000 # منفذ NodePort (يمكنك اختيار أي رقم بين 30000-32767)
+  type: NodePort

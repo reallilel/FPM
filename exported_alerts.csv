@@ -1,0 +1,2 @@
+action,alerts,byte_count,dst_ip,dst_port,flow_id,protocol,src_ip,timestamp
+allow,['Generated Test Data'],1500,10.0.0.1,80,dummy-flow-1754770497.635153,HTTP,192.168.1.100,2025-08-09T23:14:57.635122Z

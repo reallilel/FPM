@@ -1,0 +1,14 @@
+# Dockerfile.agent
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY proxy_agent.py .
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENV SERVER_HOST=fpm-server
+ENV SERVER_PORT=8443
+
+CMD ["python", "proxy_agent.py"]

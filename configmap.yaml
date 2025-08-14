@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tls-config
+data:
+  server.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIDFTCCAf2gAwIBAgIUFU2aH20Ocw/e3Omuywc2eIYoUSYwDQYJKoZIhvcNAQEL
+    BQAwGjEYMBYGA1UEAwwPeW91ci1kb21haW4uY29tMB4XDTI1MDcwOTA3NDMwOVoX
+    DTI2MDcwOTA3NDMwOVowGjEYMBYGA1UEAwwPeW91ci1kb21haW4uY29tMIIBIjAN
+    BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsBtyttFJtuZqE96eery4s0KIexn+
+    n+S8+nHGz14F8BwpQPMal0m77btUBzocRai9cX31BmDSgYFn3nSuJkD/FgpJ/nYF
+    6udV4Ykgkv4DfixLgoFon21r4I0kWt3p7baZqOsd89TXgD9vQkkkE4vimGAxcPh1
+    trNi58sN7d7UgGqVMk4YZxQlp0tzM14NqfA9Ra4wY2meRbO1CCwfXy9Otf3uafXz
+    30FJdh4zaVR3SkkCePKhB6Ba3mg4tuX7P5tPjB15o/4fSBLhglP+Evzxn27rgJF2
+    XRXowQzyw2zi2jjSrFJ1gYoijR/fnWnNv/t4TscvlLE86vf8/VxOBCiG6QIDAQAB
+    o1MwUTAdBgNVHQ4EFgQURW6K6wx7lIiJRnI+KjRGlLSMloQwHwYDVR0jBBgwFoAU
+    RW6K6wx7lIiJRnI+KjRGlLSMloQwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0B
+    AQsFAAOCAQEAjkmdZ9s/8ptbOQp2QDGeSmaN8U52Swc6rv7sH8i4J6LAkXsCzQbx
+    XWtTnUgHRywkK+MMP2749ci4gKA1Um9+ex+P3P8+FPhzWnn3AfOPcsZVGs48h6e+
+    xvRtKgxpNH7k2JT8lAaK0ucPch8m0VzYi5keF20c3uI90o6CrmkgGrBbyaq6i0yy
+    Ro1fV6XLoYP95c8o4jovBsfq5GdFuVnng9OSSwo/+ObRugsU4HVjAnTeuxBWpjfx
+    nRjquK3ZohmOkvgx9oeVC8I7TeNVbrl7NZw8cdKma+j3vnJmF0qVgD6Vqnkm2oyN
+    CtxKyCBYg4Ai45czDoitnHHBEhNPpL4y5Q==
+    -----END CERTIFICATE-----
+  server.key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwG3K20Um25moT
+    3p56vLizQoh7Gf6f5Lz6ccNXXgXwHClA8xqXSbvtu1QHOhxFqL1xffUGYNKBgWfe
+    dK4mQP8WCkn+dgXq51XhiSCS/gN+LEuCgWifbWvgjSRa3enttpmo6x3z1NeAP29C
+    SSQTi+KYYDFw+HW2s2Lnyw3t3tSAapUyThhnFCWnS3MzXg2p8D1FrjBjaZ5Fs7UI
+    LB9fL061/e5p9fPfQUl2HjNpVHdKSQJ48qEHoBreaDi25fs/m0+MHXmj/h9IEuGC
+    U/4S+TOfbuuAkXZdFejBDPLDbOLaONKsUnWBiiKNH9+nac2/+3hOxy+UsTzq9/z9
+    XE4EKIbpAgMBAAECggEALdp3u/IyZ1UHObU1Pm/1B3fDYYobKja8ndkSEtxAX4x1
+    kVu7CLlCHVwxPNB8nAabjPlm2wpKxT2Ude+biIpT4ME9EuxYDhm92sOBn8RT1H5k
+    Cs73Fsu+0vDtDlvJlQN+buUJH3vDwLjDl1bD9fLuRQ6G0QtgWvnKPuA3+D+UxPqL
+    3Lgq+K/tzuwSBjTWcby8YDrHZuwyeI98gzNyGCjHlB7EhL3E0Br9b3S0YfT60Z3n
+    CjzlNNsUqDZN45dCx1+pW5i2RU0p2SOOY7KYTscI4zL12zGkQl8ui+T3TD7+Ykyh
+    8jFBMcfgQWAOkOOBWx45crcAItrOM2EOsmOC12R2oQKBgQDy12TVXnTbS4dokZ+e
+    ckeYuk90PcSJrPmljcEDHl26ij/xQBKXhlSDuQJEvcoXBXcCLWgqKZXabzoQVo9p
+    6dm+Cyo6TwsDnyl3gxkEBp8ZLoXkKp3/B3vmVs2UeYBB+Z+k8R5tDCwgiNvHuLJF
+    7oGfft94NdiN9zotBIn1jTLhuwKBgQC5plevCaisq8pEr82bZ9vMjmIZ2y3hhGoN
+    Rw0OZZ8OCVJSkHhH2yXwMEuFrHrxJwt687+FXQQ87zIllnOsmYe1VycRRkF+OH4+
+    j7fbLs1lgmASSP8dvXx4llya4Usp61rTQTdXvs15iVyytBQIBNmsZB8fR2YMtsh2
+    gZwjfivNqwKBgGhsEJLjhBJMXxSrEd0bPQhCjSnp6ZpeBBeZZfbGVv2At1AxAg2g
+    GLVvl7cheUX+9pa8Gb+PlD2SeIBQCGk9woDC4kyicpUDGtymRdqCUmWMqMxdOwVQ
+    HYoFp28B9BHqmihd+nxfsJXo48D0/cuubJS+BK/3T4B0X9K90ekB53BDAoGAE9xC
+    txv+anJ6UfzIrx5eOjTlM8Tp1J1YxxDZybd/W34Ny31fELjWByrzeVppUJEPvliD
+    HZ5EzMv9/l1nTliiVvj62fM9IGakwsaXMaCBRN18r5gVirXxsejMAVmms9ZUwhLQ
+    +9cSnjTesNNo7S6vpqyTU8JMnYGUUnEtJfLidr8CgYEA0Ezwzt0ivzlrrdqHFpFT
+    dcmrXUHE5aPxGvKPJKkYpSqvLMyoKdopno40bOoevf6yPPy4xDJeyhf9wRNAxP3M
+    eCOqIaBa/hdZv5IX2uG2utbXxILwl9PLrmpeUMTzAvTqInsFFTHRG6EXh6NHqGXR
+    hWYIzi9Lly7aQbAC2swLyf4=
+    -----END PRIVATE KEY-----
