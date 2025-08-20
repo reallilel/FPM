@@ -169,24 +169,20 @@ requirements.txt → مكتبات بايثون المطلوبة.
 
 test_context.tar → ممكن يكون أرشيف تجارب/بيئة اختبار محفوظة.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-📌 الأماكن اللي يتغير فيها الـ IP
+📌 Places Where the IP Address Changes
+Kubernetes Services/Deployments Files
+dashboard-service.yaml: If you have manually programmed the NodePort or externalIPs.
 
-ملفات Kubernetes Services/Deployments
+server-deployment.yaml + proxy-agent-deployment.yaml + dashboard-deployment.yaml: If you wrote the IP address instead of the service name (directly in env: or args:).
 
-dashboard-service.yaml → إذا كنت مبرمج الـ NodePort أو الـ externalIPs يدويًا.
+configmap.yaml: If there are settings with a static IP address (for example, the address of Elasticsearch or a Server).
 
-server-deployment.yaml + proxy-agent-deployment.yaml + dashboard-deployment.yaml → إذا كتبت الـ IP بدل اسم السيرفس (مباشرة في env: أو args:).
+Python Files (Hardcoded IPs)
+server.py: If you didn't use 0.0.0.0 or localhost and wrote a static IP.
 
-configmap.yaml → إذا فيه إعدادات فيها IP ثابت (مثلاً عنوان Elasticsearch أو Server).
+proxy_agent.py: You'll often write the server's IP address in this file.
 
-ملفات بايثون (Hardcoded IPs)
+dashboard.py or tk_dashboard.py: If you are connecting directly to the server/Elasticsearch using an IP address instead of a service name.
 
-server.py → إذا ما عامل 0.0.0.0/localhost وكتبت IP ثابت.
-
-proxy_agent.py → غالبًا بتكتب فيه IP السيرفر.
-
-dashboard.py أو tk_dashboard.py → إذا بتتصل مباشرة على السيرفر/Elasticsearch باستخدام IP بدل service name.
-
-السكربتات التشغيلية
-
-start_fpm.sh أو start_fpm_desktop.sh → إذا بتعمل فيهم curl أو kubectl port-forward وتستخدم IP بدل اسم السيرفس.
+Operational Scripts
+start_fpm.sh or start_fpm_desktop.sh: If you are using curl or kubectl port-forward and using an IP address instead of the service name
