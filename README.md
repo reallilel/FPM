@@ -36,7 +36,12 @@ minikube start --driver=docker
 kubectl apply -f elasticsearch-deployment.yaml
 kubectl apply -f server-deployment.yaml
 kubectl apply -f dashboard-deployment.yaml
-kubectl apply -f proxy-agent-deployment.yaml
+kubectl apply -f proxy-agent-deployment.yaml  
+--
+kubectl get pods -o wide
+kubectl get svc
+
+
 
 3️⃣ Start the Server Locally (Optional for Debug)
 python server.py
