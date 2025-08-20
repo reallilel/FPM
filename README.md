@@ -170,10 +170,13 @@ requirements.txt → مكتبات بايثون المطلوبة.
 test_context.tar → ممكن يكون أرشيف تجارب/بيئة اختبار محفوظة.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 📌 Places Where the IP Address Changes
+
 Kubernetes Services/Deployments Files
 dashboard-service.yaml: If you have manually programmed the NodePort or externalIPs.
 
-server-deployment.yaml + proxy-agent-deployment.yaml + dashboard-deployment.yaml: If you wrote the IP address instead of the service name (directly in env: or args:).
+server-deployment.yaml + 
+proxy-agent-deployment.yaml + 
+dashboard-deployment.yaml: If you wrote the IP address instead of the service name (directly in env: or args:).
 
 configmap.yaml: If there are settings with a static IP address (for example, the address of Elasticsearch or a Server).
 
